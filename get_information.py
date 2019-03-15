@@ -11,9 +11,8 @@ from io import StringIO
 from email.mime.text import MIMEText
 from email import message
 
-# pray time
 
-
+# get pray time
 def do_pray_time():
 
     islamic_finder = urllib.request.urlopen("https://www.islamicfinder.org/")
@@ -42,9 +41,7 @@ def do_pray_time():
     return pray_time
 
 
-# Iran international news site
-
-
+# get Iran international news site
 def do_iran_news():
 
     res = urllib.request.urlopen("http://parstoday.com/ja")
@@ -73,9 +70,8 @@ def do_iran_news():
 
     return iran_news
 
-# rokusaisha blog
 
-
+# get rokusaisha blog
 def do_rokusaisha():
 
     res2 = urllib.request.urlopen("http://www.rokusaisha.com/index.php")
@@ -99,8 +95,8 @@ def do_rokusaisha():
 
     return rokusaisha
 
-#send mail
 
+#send mail
 def do_mail(information1, information2, information3):
 
     smtp_host = 'smtp.gmail.com'
@@ -132,6 +128,7 @@ def do_mail(information1, information2, information3):
 
     print('Sending mail is completed')
 
-
+    
+# main part
 if __name__ == '__main__':
     do_mail(do_pray_time(), do_iran_news(), do_rokusaisha())
